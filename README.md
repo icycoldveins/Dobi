@@ -1,33 +1,33 @@
 # Dobi - EPUB Reader App
 
-A modern iOS EPUB reader app built with SwiftUI and SwiftData, featuring comprehensive theming, accessibility support, and a clean reading experience.
+An iOS EPUB reader built with SwiftUI and SwiftData. Features theming, accessibility support, and clean reading.
 ![alt text](image-1.png)
 ## Features
 
-### 📚 Reading Experience
-- Clean, distraction-free EPUB reading interface
-- Responsive text rendering with WebKit integration
-- Chapter navigation with progress tracking
-- Bookmarks and highlights support
-- Reading progress persistence
+### Reading Experience
+- EPUB reading interface without distractions
+- WebKit text rendering
+- Chapter navigation with progress tracking  
+- Bookmarks and highlights
+- Reading progress saves automatically
 
-### 🎨 Advanced Theming System
-- **Built-in Themes**: Light, Dark, and Sepia modes
-- **Custom Themes**: Create and customize your own color schemes
-- **SwiftUI Integration**: Proper `preferredColorScheme` support for native iOS components
-- **System Integration**: Automatic light/dark mode switching
-- **Scheduled Themes**: Time-based theme switching
-- **WCAG Compliance**: Accessibility contrast ratio checking
-- **Theme Import/Export**: Share custom themes (coming soon)
+### Theming System
+- Built-in Themes: Light, Dark, and Sepia modes
+- Custom Themes: Create and customize your own color schemes
+- SwiftUI Integration: Native iOS component support with preferredColorScheme
+- System Integration: Follows iOS light/dark mode
+- Scheduled Themes: Switch themes by time
+- WCAG Compliance: Check accessibility contrast ratios
+- Theme Import/Export: Share custom themes (coming soon)
 
-### ♿ Accessibility
+### Accessibility
 - WCAG AA/AAA contrast ratio compliance checking
-- Built-in accessibility support through SwiftUI
+- SwiftUI accessibility support
 - High contrast theme options
 - VoiceOver compatible interface
 
-### 💾 Data Management
-- SwiftData-powered local storage
+### Data Management
+- SwiftData local storage
 - Reading progress synchronization
 - Book metadata management
 - User preferences persistence
@@ -35,10 +35,10 @@ A modern iOS EPUB reader app built with SwiftUI and SwiftData, featuring compreh
 ## Architecture
 
 ### Core Components
-- **Theme System**: Protocol-based theming with SwiftUI integration
-- **SwiftData Models**: Book, Chapter, ReadingProgress, Bookmark, Highlight, Note, UserPreferences
-- **Theme Manager**: Centralized theme management with automatic switching
-- **Reader Engine**: WebKit-based EPUB rendering
+- Theme System: Protocol-based theming with SwiftUI integration
+- SwiftData Models: Book, Chapter, ReadingProgress, Bookmark, Highlight, Note, UserPreferences
+- Theme Manager: Centralized theme management with automatic switching
+- Reader Engine: WebKit-based EPUB rendering
 
 ### Theme System Details
 ```swift
@@ -111,7 +111,7 @@ themeManager.updateScheduleSettings(settings)
 ```
 
 ### Adding Books
-Currently supports sample book creation. Full EPUB import coming soon.
+Supports sample book creation. Full EPUB import coming soon.
 
 ## Development
 
@@ -126,9 +126,9 @@ xcodebuild -scheme Dobi clean build | xcbeautify -q
 
 ### Code Style
 - SwiftUI best practices
-- Modern Swift 5.9+ features
+- Swift 5.9+ features
 - Protocol-oriented design
-- MVVM architecture where appropriate
+- MVVM architecture when needed
 
 ### Testing
 - Unit tests for theme system
@@ -146,36 +146,35 @@ xcodebuild -scheme Dobi clean build | xcbeautify -q
 7. Open a Pull Request
 
 ### Commit Conventions
-This project follows conventional commits:
-- `feat:` - New features
-- `fix:` - Bug fixes
-- `docs:` - Documentation changes
-- `style:` - Code formatting
-- `refactor:` - Code restructuring
-- `test:` - Test additions
-- `chore:` - Maintenance tasks
+Follow conventional commits:
+- feat: New features
+- fix: Bug fixes
+- docs: Documentation changes
+- style: Code formatting
+- refactor: Code restructuring
+- test: Test additions
+- chore: Maintenance tasks
+
 ## Technical Details
 
 ### Theme System Architecture
-The theme system is built around a protocol-based approach that integrates seamlessly with SwiftUI:
+The theme system uses a protocol-based approach with SwiftUI:
 
-1. **Theme Protocol**: Defines the interface for all themes
-2. **Built-in Themes**: Light, Dark, and Sepia implementations
-3. **Custom Themes**: User-created themes with full customization
-4. **Theme Manager**: Handles persistence, scheduling, and system integration
-5. **SwiftUI Integration**: Uses `preferredColorScheme` for proper iOS appearance
+1. Theme Protocol: Defines the interface for all themes
+2. Built-in Themes: Light, Dark, and Sepia implementations
+3. Custom Themes: User-created themes with full customization
+4. Theme Manager: Handles persistence, scheduling, and system integration
+5. SwiftUI Integration: Uses preferredColorScheme for iOS appearance
 
 ### Key Features
-- **Automatic Color Scheme Detection**: Responds to iOS system appearance changes
-- **Scheduled Theme Switching**: Time-based automatic theme changes
-- **WCAG Compliance**: Built-in accessibility contrast checking
-- **Theme Persistence**: Custom themes saved to UserDefaults
-- **Animation Support**: Smooth transitions between themes
+- Automatic Color Scheme Detection: Responds to iOS system appearance changes
+- Scheduled Theme Switching: Time-based automatic theme changes
+- WCAG Compliance: Built-in accessibility contrast checking
+- Theme Persistence: Custom themes saved to UserDefaults
+- Animation Support: Smooth transitions between themes
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see the LICENSE file for details.
 
----
-
-**Made with ❤️ using SwiftUI**
+Built with SwiftUI
