@@ -10,9 +10,17 @@ import SwiftData
 
 @main
 struct DobiApp: App {
+    @StateObject private var themeManager = ThemeManager.shared
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Book.self,
+            Chapter.self,
+            ReadingProgress.self,
+            Bookmark.self,
+            Highlight.self,
+            Note.self,
+            UserPreferences.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +33,20 @@ struct DobiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ThemedContentView()
+                .environmentObject(themeManager)
         }
         .modelContainer(sharedModelContainer)
+    }
+}
+
+struct ThemedContentView: View {
+    @EnvironmentObject var themeManager: ThemeManager
+
+    var body: some View {
+        ContentView()
+            .environment(\.theme, themeManager.currentTheme)
+            .preferredColorScheme(themeManager.currentTheme.colorScheme)
+            .background(themeManager.currentTheme.background)
     }
 }
